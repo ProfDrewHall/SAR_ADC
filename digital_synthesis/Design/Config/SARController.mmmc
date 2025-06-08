@@ -1,0 +1,15 @@
+# Version:1.0 MMMC View Definition File
+
+set TechPath    [getenv TechPath]
+set TTQRCFile   [getenv TTQRCFile]
+set TTLibFile   [getenv TTLibFile]
+set TargetTemp  $TargetTemp
+set TargetProc  $TargetProc
+
+create_rc_corner        -name  typcRC         -qrc_tech         ${TTQRCFile}   -temperature ${TargetTemp}
+create_library_set      -name  typcLib        -timing           ${TTLibFile}
+create_timing_condition -name  typcTC         -library_sets     typcLib
+create_delay_corner     -name  typcCorner     -timing_condition typcTC         -rc_corner   typcRC
+create_constraint_mode  -name  funcConstraint -sdc_files        ${SDC}
+create_analysis_view    -name  typcView       -constraint_mode  funcConstraint -delay_corner typcCorner
+set_analysis_view       -setup typcView -hold typcView

@@ -1,0 +1,44 @@
+# EE266 Digital Synthesis Script
+
+---
+## Purpose
+
+This repository automates the digital synthesis and layout generation for control circuitry in a SAR ADC.  
+Developed as part of the UCSD EE266 course, the script takes Verilog input and configuration files to produce an optimized GDSII layout.
+
+---
+## Tools Used
+
+- **Genus**: `21.16-s062_1`
+- **Innovus**: `v21.16-s078_1`
+
+---
+## Required Libraries
+
+Ensure the following TSMC65 6X1Z1U PDK and digital standard cell libraries are available in the `DigTech/` folder:
+
+- `qrcTechFile.typical`
+- `tcbn65gplus_macro.lef`
+- `tsmcN65_HVH_9M_6X1Z1U_RDL.lef`
+- `tcbn65gplustc.lib`
+- `tsmcN65_6X1Z1U.map`
+
+> Note: The LEF files are split into macro and routing parts to support flexible backend routing rules and DRC updates.  
+Refer to the Cadence *Mixed-Signal (MS) Interoperability Guide* for more details.
+
+---
+
+## Folder Structure
+
+DigTech/             → Technology files
+Design/              → Design files (pre- and post-synthesis)
+  ├── Config/        → SAR logic configuration (timing, corners, I/O placement)
+  ├── GDS/           → Final GDSII output
+  └── HDL/           → Verilog input and synthesis output
+Scripts/             → Scripts to run Cadence tools
+
+## Credits
+Developed by **Omid Ghadami** (oghadami@ucsd.edu) for the **UCSD EE266** course.  
+Forked from the **Cadence Full Flow (FF) Rapid Adoption Kit (RAK)**.  
+Incorporates ideas from *Digital VLSI Chip Design with Cadence and Synopsys CAD Tools*.
+

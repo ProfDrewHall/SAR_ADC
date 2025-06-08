@@ -1,0 +1,53 @@
+// VerilogA for VerilogA_Model, bin2dec_10b_va, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+`define NUM_BIT 9
+
+module bin2dec_signed_va(BIN, DOUT, VDD, VSS);
+
+	input [`NUM_BIT-1:0] BIN;	electrical [`NUM_BIT-1:0] BIN;
+	output DOUT;	electrical DOUT;
+	inout VDD; 		electrical VDD;
+	inout VSS;		electrical VSS;
+
+	parameter real trise = 10p from [0:inf);
+	parameter real tfall = 10p from [0:inf);
+	parameter real tdel = 10p from [0:inf);
+
+	real vt, dout, bin[`NUM_BIT-1: 0];
+
+	integer mult;
+
+    genvar i;
+
+	analog begin
+		@( initial_step) begin
+			vt = (V(VDD) + V(VSS)) / 2;
+		end
+
+		mult = 1;
+		dout = 0;	
+	
+		for (i = 0; i< `NUM_BIT; i = i + 1) begin
+			if (V(BIN[i]) > vt) begin
+				bin[i] = 0;
+			end
+			else begin 
+				bin[i] = 1;
+			end
+			if (i == `NUM_BIT-1) begin
+				dout = dout + (1)*bin[i]*mult;
+			end 
+			else begin
+				dout = dout + bin[i] * mult;
+			end	
+			mult = mult*2;
+		end
+
+		V(DOUT) <+ transition(dout, tdel, trise, tfall );
+	end
+
+endmodule
+
+

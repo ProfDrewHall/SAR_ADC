@@ -1,0 +1,23 @@
+Starting Monte Carlo Sampling...
+
+Current time: Thu May  2 12:20:21 2024 
+MonteCarlo.0
+Number of points completed: 10
+Number of simulation errors: 10
+MonteCarlo.0 completed. 
+Current time: Thu May  2 12:20:29 2024 
+Monte Carlo Sampling yield summary:
+Number of spec values are in this yield data: 2
+Lab2:comp_off_TB:1	Nominal - 
+	Pwr:	Yield	0%
+		Min 0	Max 0	Mean 0	Number of errors 10
+Lab2:comp_off_TB:1	Nominal - 
+	offset:	Yield	0%
+	window/delta yield 1	0%	yield 2 	0%
+		Min 0	Max 0	Mean 0	Number of errors 10
+
+Lab2:comp_off_TB:1
+	Overall Yield	0%	Number of points passed	0	Total number of points	10
+
+Estimated yield = 0% (0/10), 10 errors
+Estimated yield (No opregions) = 0% (0/10)

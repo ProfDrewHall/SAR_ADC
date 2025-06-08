@@ -1,0 +1,27 @@
+// VerilogA for Lab3, comparator, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module comparator(CNb, CPb, OUT, VDD, VSS, CLK, CLKB, INN, INP);
+output CNb;
+electrical CNb;
+output CPb;
+electrical CPb;
+output OUT;
+electrical OUT;
+inout VDD;
+electrical VDD;
+inout VSS;
+electrical VSS;
+input CLK;
+electrical CLK;
+input CLKB;
+electrical CLKB;
+input INN;
+electrical INN;
+input INP;
+electrical INP;
+
+
+endmodule

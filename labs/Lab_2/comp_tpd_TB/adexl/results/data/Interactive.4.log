@@ -1,0 +1,25 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Mon Oct 10 16:15:42 2022 
+Best design point: 1
+Design specs: 
+	Lab2:comp_tpd_TB:1	corner	FF - 
+	Pwr		2.026u
+	offset		Error	No
+	tpdr		156.3p
+Design parameters: 
+	dV		0
+	Fs		10M
+	VCM		500m
+	tdelay		20n
+	tprd		450n
+	tf		10p
+	tr		10p
+	VIH		500.2m
+	VIL		495.8m
+
+Interactive.4
+Number of points completed: 1
+Number of simulation errors: 1
+Interactive.4 completed. 
+Current time: Mon Oct 10 16:15:47 2022 

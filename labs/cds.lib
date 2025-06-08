@@ -1,0 +1,17 @@
+DEFINE Lab1 Lab_1
+
+# Use for lab 2
+DEFINE Lab2 Lab_2
+
+# Use for Lab 3
+DEFINE Lab3 Lab_3
+DEFINE tcbn65gplus /software/ECE/TSMC-2022/TSMC65_stdcells/tcbn65gp/tcbn65gplus/tcbn65gplus
+
+# Use for Lab 4
+DEFINE Lab4 Lab_4
+DEFINE tpan65gpgv2od3 tpan65gpgv2od3
+DEFINE tpvn65v tpvn65v
+DEFINE SealRingTemplate SealRingTemplate
+DEFINE tpfn65gpgv2od3 tpfn65gpgv2od3
+DEFINE tpbn65v_6X1Z1U_WB tpbn65v_6X1Z1U_WB
+DEFINE tpbn65v_6X1Z1U_CUP tpbn65v_6X1Z1U_CUP

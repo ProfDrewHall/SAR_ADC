@@ -1,0 +1,22 @@
+module	NOLCGen	(CIn, COut, COutb, VDD, VSS);
+output	COut, COutb;
+input	CIn;
+inout	VDD, VSS;
+
+wire		Wire1, Wire2, Wire3, Wire4, Wire5, Wire6, Wire7, Wire8, Wire9, Wire10;
+
+INVD0	U0	(.I(CIn),				.ZN(CInb),	.VDD(VDD),	.VSS(VSS));
+NR2D0	U1	(.A2(Wire4),	.A1(CIn),	.ZN(Wire1),	.VDD(VDD),	.VSS(VSS));
+NR2D0 	U2	(.A2(Wire2),	.A1(CInb),	.ZN(Wire3), 	.VDD(VDD),	.VSS(VSS));
+CKBD2	U3	(.I(Wire1),				.Z(Wire2), 	.VDD(VDD),	.VSS(VSS));
+CKBD2	U4	(.I(Wire3),				.Z(Wire4), 	.VDD(VDD),	.VSS(VSS));
+CKBD2	U5	(.I(Wire2),				.Z(Wire5), 	.VDD(VDD),	.VSS(VSS));
+CKBD2	U6	(.I(Wire4),				.Z(Wire6), 	.VDD(VDD),	.VSS(VSS));
+CKBD2	U7	(.I(Wire5),				.Z(Wire7), 	.VDD(VDD),	.VSS(VSS));
+CKBD2	U8	(.I(Wire6),				.Z(Wire8), 	.VDD(VDD),	.VSS(VSS));
+CKBD8	U9	(.I(Wire7),				.Z(Wire9), 	.VDD(VDD),	.VSS(VSS));
+CKBD8	U10	(.I(Wire8),				.Z(Wire10), 	.VDD(VDD),	.VSS(VSS));
+CKBD16	U11	(.I(Wire9),				.Z(COutb), 	.VDD(VDD),	.VSS(VSS));
+CKBD16	U12	(.I(Wire10),				.Z(COut), 	.VDD(VDD),	.VSS(VSS));
+
+endmodule

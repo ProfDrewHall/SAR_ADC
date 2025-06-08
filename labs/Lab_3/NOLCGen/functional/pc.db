@@ -1,0 +1,30 @@
+--pcdbVlog file, Rev:1.0
+
+#CELL
+* CKBD2 *
+U3
+U8
+U7
+U6
+U5
+U4
+
+#CELL
+* NR2D0 *
+U1
+U2
+
+#CELL
+* CKBD16 *
+U11
+U12
+
+#CELL
+* CKBD8 *
+U9
+U10
+
+#CELL
+* INVD0 *
+U0
+

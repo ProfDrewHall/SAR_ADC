@@ -1,0 +1,23 @@
+Starting Monte Carlo Sampling...
+
+Current time: Thu May  2 12:20:35 2024 
+MonteCarlo.1
+Number of points completed: 10
+Number of simulation errors: 0
+MonteCarlo.1 completed. 
+Current time: Thu May  2 12:20:51 2024 
+Monte Carlo Sampling yield summary:
+Number of spec values are in this yield data: 2
+Lab2:comp_off_TB:1	MC mismatch - 
+	Pwr:	Yield	100%
+		Min 3.54137e-06	Max 3.54137e-06	Mean 3.54137e-06	Number of errors 0
+Lab2:comp_off_TB:1	MC mismatch - 
+	offset:	Yield	100%
+	window/delta yield 1	100%	yield 2 	100%
+		Min -7.10543e-17	Max -7.10543e-17	Mean -7.10543e-17	Sigma to Target1.79769e+308/1.79769e+308	Number of errors 0
+
+Lab2:comp_off_TB:1
+	Overall Yield	100%	Number of points passed	10	Total number of points	10
+
+Estimated yield = 100% (10/10), 0 errors
+Estimated yield (No opregions) = 100% (10/10)

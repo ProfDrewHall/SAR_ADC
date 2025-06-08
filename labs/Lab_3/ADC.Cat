@@ -1,0 +1,6 @@
+TDMCHECKPOINT="1.0"
+Lab3/SAR_ADC type="cell"
+Lab3/SAR_core type="cell"
+Lab3/comparator type="cell"
+Lab3/comparator_core type="cell"
+keepEmptyCategory type="unknown"

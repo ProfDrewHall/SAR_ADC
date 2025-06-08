@@ -1,0 +1,35 @@
+// VerilogA for Project_TB, bin_search, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module bin_search(OUT, CLK, IN);
+output OUT;
+electrical OUT;
+input CLK;
+electrical CLK;
+input IN;
+electrical IN;
+parameter real off_init = 0.02 ;
+real vth=0.5;
+integer count=0;
+real vout=0;
+
+analog begin
+	
+    @(cross(V(CLK) - vth, 1)) begin
+	if (count>0) begin
+		if (V(IN)>vth)
+			vout= vout - off_init/(2**(count-1));
+		else 
+			vout= vout + off_init/(2**(count-1));
+	end
+	count=count+1;
+	end	
+
+
+    V(OUT) <+ transition(vout, 50p, 50p );
+  
+end
+endmodule
+

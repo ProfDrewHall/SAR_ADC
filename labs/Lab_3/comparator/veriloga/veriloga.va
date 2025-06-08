@@ -1,0 +1,57 @@
+// VerilogA for Lab3, comparator, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module comparator(CNb, CPb, OUT, VDD, VSS, CLK, CLKB, INN, INP);
+output CNb;
+electrical CNb;
+output CPb;
+electrical CPb;
+output OUT;
+electrical OUT;
+inout VDD;
+electrical VDD;
+inout VSS;
+electrical VSS;
+input CLK;
+electrical CLK;
+input CLKB;
+electrical CLKB;
+input INN;
+electrical INN;
+input INP;
+electrical INP;
+
+parameter real tt = 10p from [0:inf);
+parameter real comp_delay = 0 from [0:inf);
+
+integer out_value = 0;
+integer cpb_value = 0;
+integer cnb_value = 0;
+
+analog begin
+	// Reset on rising edge of clock
+	@(cross(V(CLK) - V(VDD)/2, -1)) begin
+		cpb_value = 0;
+		cnb_value = 0;
+	end
+
+	// Make the comparison on the falling edge of clock
+	@(cross(V(CLK) - V(VDD)/2, +1)) begin
+		if (V(INP) > V(INN)) begin
+			out_value = 1;
+			cnb_value = 1;
+		end else begin
+			out_value = 0;
+			cpb_value = 1;
+		end
+	end
+
+	// Set the outputs
+	V(CNb) <+ transition(cnb_value * V(VDD), comp_delay, tt);
+	V(CPb) <+ transition(cpb_value * V(VDD), comp_delay, tt);
+	V(OUT) <+ transition(out_value * V(VDD), comp_delay, tt);
+end
+
+endmodule

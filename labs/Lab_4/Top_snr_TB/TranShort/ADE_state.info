@@ -1,0 +1,3 @@
+projectDir = '"~/simulation"
+designInfo = '("FullChipTest" "Top_snr_TB" "schematic" "spectre")
+descriptionText = "None"

@@ -1,0 +1,11 @@
+--pcdbVlog file, Rev:1.0
+
+#CELL
+* DEL2 *
+U0
+U1
+
+#CELL
+* CKBD12 *
+U2
+

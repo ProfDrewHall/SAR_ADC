@@ -1,0 +1,6 @@
+TDMCHECKPOINT="1.0"
+Lab3/ADC.Cat type="category"
+Lab3/CDAC.Cat type="category"
+Lab3/Digital.Cat type="category"
+Lab3/Ideal.Cat type="category"
+Lab3/Testbench.Cat type="category"

@@ -1,0 +1,25 @@
+//Revision 35
+//NOTE
+// Default config view template for AMS netlister(s) in ADE.
+// Note:
+//      Please remember to replace Top Cell Library, Cell, and View
+//      fields with the actual names used by your design.
+//END_NOTE
+
+config SAR_TB;
+design Lab3_9b_OG.SAR_TB:schematic;
+liblist tcbn65gplus, Lab3_9b_OG;
+
+viewlist spectre, spice, pspice, verilog, verilogams, behavioral, functional, schematic, veriloga, wreal, symbol;
+stoplist spectre;
+
+
+cell Lab3_DH.switch binding :schematic_id;
+
+cell Lab2.switch binding :schematic_id;
+
+cell Lab3_9b_OG.switch binding :schematic;
+cell Lab3_9b_OG.SARController binding :schematic;
+
+
+endconfig
